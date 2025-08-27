@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dropdown">
+  <button class="menu-button" onclick="toggleDropdown()">Membership Manager</button>
+        <div class="dropdown-content" id="membershipDropdown">
+        <a href="#" onclick="alert('Show Member List & Status')">Member List & Status</a>
+        <a href="#" onclick="alert('Open New Member Registration Form')">New Member Registration</a>
+        <a href="#" onclick="alert('Open Membership Renewal Options')">Membership Renewal</a>
+        </div>
+   </div>
+<script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById("membershipDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+  }
+
+  // Close dropdown when clicking outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.menu-button')) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+
+</body>
+</html>
